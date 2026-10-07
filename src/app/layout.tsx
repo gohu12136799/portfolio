@@ -62,10 +62,15 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fafafa",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
+
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`;
 
 export default function RootLayout({
   children,
@@ -73,9 +78,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        {/* Runs before paint so the saved theme applies without a light flash. */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${geistMono.variable} min-h-screen bg-[#fafafa] text-[#525252] antialiased selection:bg-blue-600/15 selection:text-neutral-900`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${geistMono.variable} min-h-screen bg-[#fafafa] text-[#525252] antialiased selection:bg-blue-600/15 selection:text-neutral-900 dark:bg-neutral-950 dark:text-neutral-400 dark:selection:text-white`}
       >
         {children}
       </body>

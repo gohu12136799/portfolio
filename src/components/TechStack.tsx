@@ -72,7 +72,10 @@ export function TechStack() {
   const { techStack } = portfolioData;
 
   return (
-    <section id="skills" className="relative border-t border-neutral-200/60 py-20 md:py-28">
+    <section
+      id="skills"
+      className="relative border-t border-neutral-200/60 py-20 dark:border-neutral-800 md:py-28"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Technical Stack & Tooling"
@@ -90,12 +93,12 @@ export function TechStack() {
                 {cat.skills.map((skill) => (
                   <li
                     key={skill.name}
-                    className="card-glow group flex flex-col items-center justify-center gap-3 rounded-xl border border-neutral-200/60 bg-white/70 px-3 py-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-300/70"
+                    className="card-glow group flex flex-col items-center justify-center gap-3 rounded-xl border border-neutral-200/60 bg-white/70 px-3 py-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-300/70 dark:border-neutral-800 dark:bg-neutral-900/60 dark:hover:border-neutral-700"
                   >
-                    <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-neutral-100/70 transition-transform duration-300 group-hover:scale-105">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-neutral-100/70 transition-transform duration-300 group-hover:scale-105 dark:bg-neutral-800/70">
                       <SkillIcon name={skill.name} />
                     </span>
-                    <span className="text-[13px] font-light leading-tight text-neutral-800">
+                    <span className="text-[13px] font-light leading-tight text-neutral-800 dark:text-neutral-200">
                       {skill.name}
                     </span>
                   </li>

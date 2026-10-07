@@ -82,7 +82,7 @@ export const portfolioData = {
     email: "huong.tranthithu12136799@gmail.com",
     github: "https://github.com/gohu12136799",
     linkedin: "https://www.linkedin.com/in/huong-tran-47296a368/",
-    resumeUrl: "/resume",
+    resumeUrl: "/HuongTran_SoftwareEngineer.pdf",
     // Paths under /public for the fanned avatar cards: [front, back-left, back-right].
     // Leave an entry empty to show a gradient placeholder.
     avatars: ["", "", ""],

@@ -17,7 +17,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative border-t border-neutral-200/60 py-20 md:py-28">
+    <section
+      id="contact"
+      className="relative border-t border-neutral-200/60 py-20 dark:border-neutral-800 md:py-28"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Get In Touch"
@@ -25,7 +28,7 @@ export function Contact() {
         />
 
         <div className="max-w-3xl">
-          <div className="rounded-2xl border border-neutral-200/70 bg-neutral-100 p-8 sm:p-10">
+          <div className="rounded-2xl border border-neutral-200/70 bg-neutral-100 p-8 dark:border-neutral-800 dark:bg-neutral-900/70 sm:p-10">
             {/* Email display and copy */}
             <div className="mb-8">
               <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-neutral-500">
@@ -34,7 +37,7 @@ export function Contact() {
               <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
                 <a
                   href={`mailto:${personal.email}`}
-                  className="group flex flex-1 items-center justify-between rounded-full border border-neutral-200 bg-white px-5 py-2.5 font-mono text-sm text-neutral-800 transition-colors hover:border-neutral-300 sm:text-base"
+                  className="group flex flex-1 items-center justify-between rounded-full border border-neutral-200 bg-white px-5 py-2.5 font-mono text-sm text-neutral-800 transition-colors hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:border-neutral-700 sm:text-base"
                 >
                   <span className="truncate">{personal.email}</span>
                   <ArrowUpRight className="ml-2 h-4 w-4 shrink-0 text-neutral-400 transition-colors group-hover:text-blue-500" />
@@ -66,14 +69,14 @@ export function Contact() {
                 href={personal.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-glow group flex items-center justify-between rounded-xl border border-neutral-200 bg-white p-4 transition-all hover:border-blue-300"
+                className="card-glow group flex items-center justify-between rounded-xl border border-neutral-200 bg-white p-4 transition-all hover:border-blue-300 dark:border-neutral-800 dark:bg-neutral-900"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-blue-500/20 bg-blue-500/10 text-blue-500 transition-transform group-hover:scale-105">
                     <LinkedinIcon className="h-4 w-4" />
                   </div>
                   <div>
-                    <div className="text-sm font-light text-neutral-800 transition-colors group-hover:text-blue-600">
+                    <div className="text-sm font-light text-neutral-800 transition-colors group-hover:text-blue-600 dark:text-neutral-200">
                       LinkedIn
                     </div>
                     <div className="font-mono text-xs text-neutral-500">/in/gohu</div>
@@ -86,14 +89,14 @@ export function Contact() {
                 href={personal.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-glow group flex items-center justify-between rounded-xl border border-neutral-200 bg-white p-4 transition-all hover:border-neutral-400"
+                className="card-glow group flex items-center justify-between rounded-xl border border-neutral-200 bg-white p-4 transition-all hover:border-neutral-400 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-600"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-100 text-neutral-700 transition-transform group-hover:scale-105">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-100 text-neutral-700 transition-transform group-hover:scale-105 dark:border-neutral-800 dark:bg-neutral-900/70 dark:text-neutral-300">
                     <GithubIcon className="h-4 w-4" />
                   </div>
                   <div>
-                    <div className="text-sm font-light text-neutral-800 transition-colors group-hover:text-neutral-950">
+                    <div className="text-sm font-light text-neutral-800 transition-colors group-hover:text-neutral-950 dark:text-neutral-200">
                       GitHub
                     </div>
                     <div className="font-mono text-xs text-neutral-500">@gohu</div>

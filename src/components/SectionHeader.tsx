@@ -13,12 +13,18 @@ export function SectionHeader({ title, subtitle, badge, align = "left" }: Sectio
       className={`mb-12 md:mb-16 ${align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-3xl"}`}
     >
       <div className={`mb-3 flex items-center gap-2 ${align === "center" ? "justify-center" : ""}`}>
-        <span className="font-mono text-2xl font-light tracking-wider text-blue-600">
+        <span className="font-mono text-2xl font-light tracking-wider text-blue-600 dark:text-blue-400">
           {"|"} {title}
         </span>
-        {badge && <span className="font-mono text-xs font-light text-[#737373]">· {badge}</span>}
+        {badge && (
+          <span className="font-mono text-xs font-light text-[#737373] dark:text-neutral-500">
+            · {badge}
+          </span>
+        )}
       </div>
-      <p className="mt-3 text-base leading-relaxed text-[#525252] sm:text-lg">{subtitle}</p>
+      <p className="mt-3 text-base leading-relaxed text-[#525252] dark:text-neutral-400 sm:text-lg">
+        {subtitle}
+      </p>
     </div>
   );
 }
