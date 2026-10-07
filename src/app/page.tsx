@@ -11,7 +11,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-grid-pattern flex min-h-screen flex-col bg-[#fafafa] text-[#525252] selection:bg-blue-600/15 selection:text-neutral-900">
+    <div className="bg-grid-pattern flex min-h-screen flex-col bg-[#fafafa] text-[#525252] selection:bg-blue-600/15 selection:text-neutral-900 dark:bg-neutral-950 dark:text-neutral-400 dark:selection:text-white">
       {/* Sticky Header */}
       <Navbar />
 

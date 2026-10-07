@@ -7,7 +7,10 @@ export function Experience() {
   const { experiences } = portfolioData;
 
   return (
-    <section id="experience" className="relative border-t border-neutral-200/60 py-20 md:py-28">
+    <section
+      id="experience"
+      className="relative border-t border-neutral-200/60 py-20 dark:border-neutral-800 md:py-28"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Experience"
@@ -17,7 +20,7 @@ export function Experience() {
         <div className="relative space-y-8">
           {/* Subtle timeline vertical track for desktop */}
           <div
-            className="pointer-events-none absolute bottom-4 left-4 top-4 hidden w-px bg-neutral-200 md:block"
+            className="pointer-events-none absolute bottom-4 left-4 top-4 hidden w-px bg-neutral-200 dark:bg-neutral-800 md:block"
             aria-hidden="true"
           />
 
@@ -25,24 +28,24 @@ export function Experience() {
             <div key={exp.id} className="group relative md:pl-12">
               {/* Timeline marker for desktop */}
               <div
-                className="absolute left-2 top-7 hidden h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full border-2 border-blue-600 bg-white transition-transform group-hover:scale-125 md:flex"
+                className="absolute left-2 top-7 hidden h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full border-2 border-blue-600 bg-white transition-transform group-hover:scale-125 dark:bg-neutral-900 md:flex"
                 aria-hidden="true"
               >
                 <div className="h-1.5 w-1.5 rounded-full bg-blue-600" />
               </div>
 
               {/* Experience Card */}
-              <div className="card-glow rounded-2xl border border-neutral-200/60 bg-white p-6 transition-all duration-200 hover:border-neutral-200/60 sm:p-7">
+              <div className="card-glow rounded-2xl border border-neutral-200/60 bg-white p-6 transition-all duration-200 hover:border-neutral-200/60 dark:border-neutral-800 dark:bg-neutral-900 sm:p-7">
                 {/* Header Row */}
-                <div className="mb-4 flex flex-col justify-between gap-3 border-b border-neutral-100 pb-4 sm:flex-row sm:items-center">
+                <div className="mb-4 flex flex-col justify-between gap-3 border-b border-neutral-100 pb-4 dark:border-neutral-800 sm:flex-row sm:items-center">
                   <div>
-                    <div className="mb-1 font-mono text-[13px] font-light text-blue-600">
+                    <div className="mb-1 font-mono text-[13px] font-light text-blue-600 dark:text-blue-400">
                       {exp.type}
                     </div>
-                    <h3 className="text-lg font-light tracking-tight text-neutral-900 sm:text-xl">
+                    <h3 className="text-lg font-light tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-xl">
                       {exp.role}
                     </h3>
-                    <div className="mt-0.5 flex items-center gap-2 text-[13px] font-light text-[#525252]">
+                    <div className="mt-0.5 flex items-center gap-2 text-[13px] font-light text-[#525252] dark:text-neutral-400">
                       {exp.companyUrl ? (
                         <a
                           href={exp.companyUrl}
@@ -51,7 +54,7 @@ export function Experience() {
                           className="inline-flex items-center gap-1 underline-offset-2 transition-colors hover:text-blue-600 hover:underline"
                         >
                           <span>{exp.company}</span>
-                          <ArrowUpRight className="h-3.5 w-3.5 text-[#737373]" />
+                          <ArrowUpRight className="h-3.5 w-3.5 text-[#737373] dark:text-neutral-500" />
                         </a>
                       ) : (
                         <span>{exp.company}</span>
@@ -60,33 +63,35 @@ export function Experience() {
                   </div>
 
                   {/* Metadata: Period & Location */}
-                  <div className="flex gap-3 font-mono text-[13px] text-[#737373] sm:flex-col sm:items-end sm:gap-1">
-                    <div className="flex items-center gap-1.5 font-light text-neutral-800">
-                      <Calendar className="h-3.5 w-3.5 text-blue-600" />
+                  <div className="flex gap-3 font-mono text-[13px] text-[#737373] dark:text-neutral-500 sm:flex-col sm:items-end sm:gap-1">
+                    <div className="flex items-center gap-1.5 font-light text-neutral-800 dark:text-neutral-200">
+                      <Calendar className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
                       <span>{exp.period}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-[#737373]">
-                      <MapPin className="h-3.5 w-3.5 text-[#737373]" />
+                    <div className="flex items-center gap-1.5 text-[#737373] dark:text-neutral-500">
+                      <MapPin className="h-3.5 w-3.5 text-[#737373] dark:text-neutral-500" />
                       <span>{exp.location}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Summary */}
-                <p className="mb-5 text-[13px] leading-relaxed text-[#525252]">{exp.summary}</p>
+                <p className="mb-5 text-[13px] leading-relaxed text-[#525252] dark:text-neutral-400">
+                  {exp.summary}
+                </p>
 
                 {/* Problems Solved */}
                 <div className="mb-6">
-                  <h4 className="mb-3 flex items-center gap-1.5 font-mono text-[13px] font-light uppercase tracking-wider text-[#525252]">
+                  <h4 className="mb-3 flex items-center gap-1.5 font-mono text-[13px] font-light uppercase tracking-wider text-[#525252] dark:text-neutral-400">
                     <span>Key Engineering Challenges & Contributions</span>
                   </h4>
                   <ul className="space-y-2.5">
                     {exp.keyProblemsSolved.map((item, pIdx) => (
                       <li
                         key={pIdx}
-                        className="flex items-start gap-2.5 text-[13px] leading-relaxed text-[#525252]"
+                        className="flex items-start gap-2.5 text-[13px] leading-relaxed text-[#525252] dark:text-neutral-400"
                       >
-                        <CheckCircle2 className="mt-[3px] h-3.5 w-3.5 shrink-0 text-blue-600" />
+                        <CheckCircle2 className="mt-[3px] h-3.5 w-3.5 shrink-0 text-blue-600 dark:text-blue-400" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -94,11 +99,11 @@ export function Experience() {
                 </div>
 
                 {/* Technologies */}
-                <ul className="flex flex-wrap gap-1.5 border-t border-neutral-100 pt-4">
+                <ul className="flex flex-wrap gap-1.5 border-t border-neutral-100 pt-4 dark:border-neutral-800">
                   {exp.techStack.map((tech) => (
                     <li
                       key={tech}
-                      className="rounded-full border border-neutral-200/80 bg-white/60 px-2.5 py-0.5 font-mono text-[13px] font-light text-[#525252] transition-colors duration-300 hover:border-indigo-200 hover:text-indigo-600"
+                      className="rounded-full border border-neutral-200/80 bg-white/60 px-2.5 py-0.5 font-mono text-[13px] font-light text-[#525252] transition-colors duration-300 hover:border-indigo-200 hover:text-indigo-600 dark:border-neutral-800 dark:bg-neutral-900/60 dark:text-neutral-400"
                     >
                       {tech}
                     </li>

@@ -93,7 +93,7 @@ export function Hero() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex flex-col text-left">
             {/* Heading */}
-            <h1 className="mb-5 font-light leading-[1.1] tracking-tight text-neutral-900">
+            <h1 className="mb-5 font-light leading-[1.1] tracking-tight text-neutral-900 dark:text-neutral-100">
               <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                 <span className="inline-block bg-[linear-gradient(90deg,#f472b6,#fb923c,#facc15,#4ade80,#38bdf8,#a78bfa,#f472b6)] bg-[length:200%_auto] bg-clip-text font-normal text-transparent motion-safe:animate-gradient-x">
                   Hi
@@ -114,7 +114,7 @@ export function Hero() {
 
             {/* Concise Professional Positioning */}
             {/* w-0 min-w-full: wrap to the heading's width instead of widening the block */}
-            <p className="mb-8 w-0 min-w-full text-balance text-lg font-light leading-relaxed text-[#525252] sm:text-xl">
+            <p className="mb-8 w-0 min-w-full text-balance text-lg font-light leading-relaxed text-[#525252] dark:text-neutral-400 sm:text-xl">
               Building scalable, high-performance products with React, Next.js, and TypeScript.
             </p>
 
@@ -146,10 +146,10 @@ export function Hero() {
       <a
         href="#about"
         aria-label="Scroll to About section"
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 rounded-full text-[#737373] transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 rounded-full text-[#737373] transition-colors hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:text-neutral-500 dark:hover:text-white"
       >
         <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Scroll</span>
-        <span className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300/70 bg-white/50 backdrop-blur-sm motion-safe:animate-bounce">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300/70 bg-white/50 backdrop-blur-sm motion-safe:animate-bounce dark:border-neutral-700 dark:bg-neutral-900/50">
           <ArrowDown className="h-3.5 w-3.5" strokeWidth={1.5} />
         </span>
       </a>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { portfolioData } from "@/data/portfolio";
 import { Menu, X, ArrowUpRight, FileText } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -46,7 +47,7 @@ export function Navbar() {
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "border-b border-neutral-200/80 bg-[#fafafa]/90 backdrop-blur-md"
+          ? "border-b border-neutral-200/80 bg-[#fafafa]/90 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-950/80"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -55,23 +56,23 @@ export function Navbar() {
           {/* Logo / Monogram */}
           <a
             href="#"
-            className="group flex items-center gap-2.5 rounded font-mono text-sm font-light tracking-tight text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 sm:text-base"
+            className="group flex items-center gap-2.5 rounded font-mono text-sm font-light tracking-tight text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:text-neutral-100 sm:text-base"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-900 text-xs font-light text-white transition-colors group-hover:bg-neutral-800">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-900 text-xs font-light text-white transition-colors group-hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:group-hover:bg-white">
               HT
             </span>
             <div className="flex flex-col">
               <span className="leading-tight transition-colors group-hover:text-blue-600">
                 {portfolioData.personal.name}
               </span>
-              <span className="font-sans text-[10px] font-light leading-none text-[#737373]">
+              <span className="font-sans text-[10px] font-light leading-none text-[#737373] dark:text-neutral-500">
                 {portfolioData.personal.displayRole}
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden items-center gap-1 rounded-full border border-neutral-200/80 bg-neutral-100/90 px-3 py-1.5 md:flex">
+          <nav className="hidden items-center gap-1 rounded-full border border-neutral-200/80 bg-neutral-100/90 px-3 py-1.5 dark:border-neutral-800 dark:bg-neutral-900/80 md:flex">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
@@ -80,8 +81,8 @@ export function Navbar() {
                   href={link.href}
                   className={`rounded-full px-3 py-1.5 text-xs font-light transition-all duration-150 ${
                     isActive
-                      ? "bg-white font-light text-blue-600"
-                      : "text-[#525252] hover:bg-neutral-200/60 hover:text-neutral-900"
+                      ? "bg-white font-light text-blue-600 dark:bg-neutral-800 dark:text-blue-400"
+                      : "text-[#525252] hover:bg-neutral-200/60 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -92,15 +93,16 @@ export function Navbar() {
 
           {/* Right Action: Download CV / Contact */}
           <div className="hidden items-center gap-3 sm:flex">
+            <ThemeToggle />
             <a
               href="#contact"
-              className="px-3 py-2 text-xs font-light text-[#525252] transition-colors hover:text-neutral-900"
+              className="px-3 py-2 text-xs font-light text-[#525252] transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
             >
               Get in Touch
             </a>
             <a
               href={portfolioData.personal.resumeUrl}
-              className="group inline-flex items-center gap-1.5 rounded-full bg-neutral-900/90 px-4 py-1.5 text-xs font-light tracking-wide text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 focus-visible:ring-offset-2"
+              className="group inline-flex items-center gap-1.5 rounded-full bg-neutral-900/90 px-4 py-1.5 text-xs font-light tracking-wide text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 focus-visible:ring-offset-2 dark:bg-white/10 dark:hover:bg-white/20"
             >
               <FileText className="h-3.5 w-3.5" strokeWidth={1.5} />
               <span>Resume</span>
@@ -113,16 +115,17 @@ export function Navbar() {
 
           {/* Mobile Menu Hamburger */}
           <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle className="sm:hidden" />
             <a
               href={portfolioData.personal.resumeUrl}
-              className="rounded-full border border-neutral-300/70 bg-white/50 p-2 text-xs font-light text-[#525252] backdrop-blur-sm transition-colors duration-300 hover:text-neutral-900"
+              className="rounded-full border border-neutral-300/70 bg-white/50 p-2 text-xs font-light text-[#525252] backdrop-blur-sm transition-colors duration-300 hover:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900/50 dark:text-neutral-400 dark:hover:text-white"
               aria-label="View Resume"
             >
               <FileText className="h-4 w-4" strokeWidth={1.5} />
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="rounded-full p-2 text-[#525252] transition-colors duration-300 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:ring-2 focus-visible:ring-blue-400/60"
+              className="rounded-full p-2 text-[#525252] transition-colors duration-300 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:ring-2 focus-visible:ring-blue-400/60 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >
@@ -134,7 +137,7 @@ export function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="animate-fade-in border-b border-neutral-200/60 bg-[#fafafa] px-4 pb-6 pt-3 shadow-lg md:hidden">
+        <div className="animate-fade-in border-b border-neutral-200/60 bg-[#fafafa] px-4 pb-6 pt-3 shadow-lg dark:border-neutral-800 dark:bg-neutral-950 md:hidden">
           <nav className="flex flex-col gap-1.5">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
@@ -145,19 +148,19 @@ export function Navbar() {
                   onClick={closeMobileMenu}
                   className={`rounded-lg px-3 py-2.5 text-sm font-light transition-colors ${
                     isActive
-                      ? "border-l-2 border-blue-600 bg-white pl-3 font-light text-blue-600"
-                      : "text-[#525252] hover:bg-neutral-100 hover:text-neutral-900"
+                      ? "border-l-2 border-blue-600 bg-white pl-3 font-light text-blue-600 dark:bg-neutral-900 dark:text-blue-400"
+                      : "text-[#525252] hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white"
                   }`}
                 >
                   {link.label}
                 </a>
               );
             })}
-            <div className="mt-2 flex flex-col gap-2 border-t border-neutral-200/60 pt-3">
+            <div className="mt-2 flex flex-col gap-2 border-t border-neutral-200/60 pt-3 dark:border-neutral-800">
               <a
                 href={portfolioData.personal.resumeUrl}
                 onClick={closeMobileMenu}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-neutral-900/90 px-4 py-2.5 text-xs font-light tracking-wide text-white transition-colors duration-300 hover:bg-neutral-800"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-neutral-900/90 px-4 py-2.5 text-xs font-light tracking-wide text-white transition-colors duration-300 hover:bg-neutral-800 dark:bg-white/10 dark:hover:bg-white/20"
               >
                 <FileText className="h-4 w-4" strokeWidth={1.5} />
                 <span>View Full Resume</span>
@@ -166,7 +169,7 @@ export function Navbar() {
               <a
                 href="#contact"
                 onClick={closeMobileMenu}
-                className="w-full rounded-full border border-neutral-300/70 bg-white/50 px-4 py-2.5 text-center text-xs font-light tracking-wide text-[#525252] transition-colors duration-300 hover:text-neutral-900"
+                className="w-full rounded-full border border-neutral-300/70 bg-white/50 px-4 py-2.5 text-center text-xs font-light tracking-wide text-[#525252] transition-colors duration-300 hover:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900/50 dark:text-neutral-400 dark:hover:text-white"
               >
                 Contact Me
               </a>

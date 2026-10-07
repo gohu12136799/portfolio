@@ -40,7 +40,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative scroll-mt-16 overflow-hidden border-t border-neutral-200/60 py-20 md:py-28"
+      className="relative scroll-mt-16 overflow-hidden border-t border-neutral-200/60 py-20 dark:border-neutral-800 md:py-28"
     >
       {/* Decorative flower */}
       <Flower
@@ -65,7 +65,7 @@ export function About() {
               return (
                 <div
                   key={card.avatar}
-                  className={`absolute inset-[8%] origin-bottom overflow-hidden rounded-3xl border border-white/80 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-transform duration-500 ease-out ${card.transform}`}
+                  className={`absolute inset-[8%] origin-bottom overflow-hidden rounded-3xl border border-white/80 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-transform duration-500 ease-out dark:border-neutral-800 dark:bg-neutral-900 ${card.transform}`}
                   aria-hidden={!isFront}
                 >
                   {src ? (
@@ -80,7 +80,7 @@ export function About() {
                     <>
                       <div className={`absolute inset-0 opacity-60 blur-2xl ${card.placeholder}`} />
                       {isFront && (
-                        <span className="absolute inset-0 flex items-center justify-center text-7xl font-light tracking-tight text-neutral-800/80">
+                        <span className="absolute inset-0 flex items-center justify-center text-7xl font-light tracking-tight text-neutral-800/80 dark:text-neutral-100/80">
                           {initials}
                         </span>
                       )}
@@ -93,12 +93,19 @@ export function About() {
 
           <div className="space-y-10 lg:col-span-8">
             {/* Narrative Column */}
-            <div className="space-y-5 hyphens-auto text-justify text-body leading-relaxed text-[#525252]">
-              <p className="text-lg text-neutral-900">
+            <div className="space-y-5 hyphens-auto text-justify text-body leading-relaxed text-[#525252] dark:text-neutral-400">
+              <p className="text-lg text-neutral-900 dark:text-neutral-100">
                 I am a Software Engineer specializing in the{" "}
-                <strong className="font-light text-neutral-900">React</strong>,{" "}
-                <strong className="font-light text-neutral-900">Next.js</strong>, and{" "}
-                <strong className="font-light text-neutral-900">TypeScript</strong> ecosystem.
+                <strong className="font-light text-neutral-900 dark:text-neutral-100">React</strong>
+                ,{" "}
+                <strong className="font-light text-neutral-900 dark:text-neutral-100">
+                  Next.js
+                </strong>
+                , and{" "}
+                <strong className="font-light text-neutral-900 dark:text-neutral-100">
+                  TypeScript
+                </strong>{" "}
+                ecosystem.
               </p>
               <p>
                 I focus on building scalable, high-performance web applications with clean
@@ -111,7 +118,7 @@ export function About() {
                 value and make everyday experiences more convenient for users.
               </p>
               {/* Quick summary pill container */}
-              <p className="border-t border-neutral-200/60 pt-3 font-mono text-xs font-light text-[#737373]">
+              <p className="border-t border-neutral-200/60 pt-3 font-mono text-xs font-light text-[#737373] dark:border-neutral-800 dark:text-neutral-500">
                 High-Traffic Products · Product knowledge · User-friendly
               </p>
             </div>
@@ -121,14 +128,14 @@ export function About() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="card-glow flex h-full flex-col items-center justify-center rounded-2xl border border-neutral-200/60 bg-white/60 px-3 py-4 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-300/70 sm:py-5"
+                  className="card-glow flex h-full flex-col items-center justify-center rounded-2xl border border-neutral-200/60 bg-white/60 px-3 py-4 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-300/70 dark:border-neutral-800 dark:bg-neutral-900/60 dark:hover:border-neutral-700 sm:py-5"
                 >
                   <div
                     className={`bg-gradient-to-br bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl ${stat.gradient}`}
                   >
                     {stat.value}+
                   </div>
-                  <div className="mt-1.5 font-mono text-[11px] font-light text-[#737373]">
+                  <div className="mt-1.5 font-mono text-[11px] font-light text-[#737373] dark:text-neutral-500">
                     {stat.label}
                   </div>
                 </div>
