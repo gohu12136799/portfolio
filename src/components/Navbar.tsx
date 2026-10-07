@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { portfolioData } from "@/data/portfolio";
-import { Menu, X, ArrowUpRight, FileText } from "lucide-react";
+import { Menu, X, Download, FileText } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
@@ -102,12 +102,13 @@ export function Navbar() {
             </a>
             <a
               href={portfolioData.personal.resumeUrl}
+              download
               className="group inline-flex items-center gap-1.5 rounded-full bg-neutral-900/90 px-4 py-1.5 text-xs font-light tracking-wide text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 focus-visible:ring-offset-2 dark:bg-white/10 dark:hover:bg-white/20"
             >
               <FileText className="h-3.5 w-3.5" strokeWidth={1.5} />
               <span>Resume</span>
-              <ArrowUpRight
-                className="h-3 w-3 text-neutral-300 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              <Download
+                className="h-3 w-3 text-neutral-300 transition-transform duration-300 group-hover:translate-y-0.5"
                 strokeWidth={1.5}
               />
             </a>
@@ -118,8 +119,9 @@ export function Navbar() {
             <ThemeToggle className="sm:hidden" />
             <a
               href={portfolioData.personal.resumeUrl}
+              download
               className="rounded-full border border-neutral-300/70 bg-white/50 p-2 text-xs font-light text-[#525252] backdrop-blur-sm transition-colors duration-300 hover:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900/50 dark:text-neutral-400 dark:hover:text-white"
-              aria-label="View Resume"
+              aria-label="Download Resume"
             >
               <FileText className="h-4 w-4" strokeWidth={1.5} />
             </a>
@@ -159,12 +161,13 @@ export function Navbar() {
             <div className="mt-2 flex flex-col gap-2 border-t border-neutral-200/60 pt-3 dark:border-neutral-800">
               <a
                 href={portfolioData.personal.resumeUrl}
+                download
                 onClick={closeMobileMenu}
                 className="flex w-full items-center justify-center gap-2 rounded-full bg-neutral-900/90 px-4 py-2.5 text-xs font-light tracking-wide text-white transition-colors duration-300 hover:bg-neutral-800 dark:bg-white/10 dark:hover:bg-white/20"
               >
                 <FileText className="h-4 w-4" strokeWidth={1.5} />
-                <span>View Full Resume</span>
-                <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+                <span>Download Resume</span>
+                <Download className="h-3.5 w-3.5" strokeWidth={1.5} />
               </a>
               <a
                 href="#contact"
